@@ -1,0 +1,42 @@
+@import "modern-normalize";
+/* @import url("./reset.css"); */
+
+/* і т.д. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+.section {
+  padding: 40px 0;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* перший елемент зробити невидимим */
+.info-list {
+  display: flex;
+  justify-self: center;
+  gap: 10px 15px;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1280px) {
+}
