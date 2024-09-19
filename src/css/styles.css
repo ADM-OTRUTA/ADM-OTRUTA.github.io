@@ -1,7 +1,6 @@
 @import "modern-normalize";
-/* @import url("./reset.css"); */
-
-/* і т.д. */
+@import url("./global/variables.css");
+@import url("./global/reset.css");
 
 html {
   scroll-behavior: smooth;
@@ -10,6 +9,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   color: black;
+  background-color: var(--bg-purp);
 }
 
 .section {
@@ -20,7 +20,6 @@ body {
   padding: 0 10px;
 }
 
-/* перший елемент зробити невидимим */
 .info-list {
   display: flex;
   justify-self: center;
