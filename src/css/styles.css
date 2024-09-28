@@ -1,6 +1,10 @@
 @import "modern-normalize";
 @import url("./global/variables.css");
 @import url("./global/reset.css");
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* ============================================ */
+/* * GLOBAL STYLES * */
 
 html {
   scroll-behavior: smooth;
@@ -20,10 +24,115 @@ body {
   padding: 0 10px;
 }
 
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* ============================================ */
+/* * INFO SECTION * */
+
 .info-list {
   display: flex;
-  justify-self: center;
-  gap: 10px 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.info-item:first-child {
+  margin-left: 165px;
+}
+
+.info-item {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 20px 10px 20px 10px;
+  width: 155px;
+  height: 160px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.info-img {
+  height: 56px;
+  width: auto;
+}
+
+.info-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: var(--bg-purp);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-item:hover .info-button,
+.info-item:focus .info-button {
+  background-color: var(--black);
+}
+.fa-plus {
+  color: var(--white);
+}
+
+.info-text {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.4;
+  align-self: flex-start;
+}
+
+/* ============================================ */
+/* * COMMUNITY SECTION * */
+
+.community-text {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  width: 260px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.community-link {
+  padding: 25px 50px;
+  border: 1px solid var(--black);
+  font-size: 16px;
+  color: var(--black);
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.community-link:hover {
+  background-color: rgba(7, 0, 0, 0.224);
+}
+
+/* ============================================ */
+/* * FOOTER * */
+
+.footer-container {
+  border-bottom: 1px solid var(--black);
+  border-top: 1px solid var(--black);
+  padding: 30px;
 }
 
 .footer-list {
@@ -31,11 +140,120 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
+.footer-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-link:hover,
+.footer-link:focus {
+  transform: scale(1.1);
+}
+
+/* ============================================ */
+/* * MEDIA * */
+
 @media screen and (min-width: 768px) {
+  /* ============================================ */
+  /* * INFO SECTION * */
+
+  .info-list {
+    gap: 20px;
+  }
+
+  .info-item {
+    width: 215px;
+    height: 295px;
+    padding: 50px 10px 15px 10px;
+  }
+  .info-item:first-child {
+    margin-left: 0;
+    margin-right: 235px;
+    width: 452px;
+    height: 295px;
+  }
+
+  .info-img {
+    height: 130px;
+  }
+
+  .info-text {
+    font-size: 27px;
+  }
+  .info-item:first-child .info-text {
+    font-size: 37px;
+  }
+
+  /* ============================================ */
+  /* * FOOTER * */
+
+  .footer-container {
+    border-bottom: 2px solid var(--black);
+    border-top: 2px solid var(--black);
+  }
+
+  .footer-list {
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .footer-item {
+    padding: 0 auto;
+  }
+
+  .footer-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-link {
+    font-size: 12px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
+  /* ============================================ */
+  /* * INFO SECTION * */
+
+  .info-list {
+    gap: 30px;
+  }
+
+  .info-item {
+    width: 250px;
+    height: 295px;
+  }
+  .info-item:first-child {
+    margin-right: 0;
+    width: 250px;
+    height: 420px;
+    align-self: flex-start;
+  }
+
+  .info-img {
+    height: 120px;
+  }
+
+  .info-button {
+    right: 20px;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .info-text {
+    font-size: 30px;
+  }
+  .info-item:first-child .info-text {
+    font-size: 30px;
+  }
+
+  /* ============================================ */
+  /* * FOOTER * */
 }
